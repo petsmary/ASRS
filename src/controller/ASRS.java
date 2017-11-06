@@ -15,16 +15,16 @@ public class ASRS {
 	public static final String STRING_CUSTOMER = "Customer";
 	public static final String STRING_TRAVELAGENT = "Travel Agent";
 	public static final String STRING_AIRLINE = "Airline Ticket Officer";
+		
+	public static final String FIRST_CLASS = "1";
+	public static final String BUSSINESS_CLASS = "2";
+	public static final String ECONOMIC_CLASS = "3";
 	
 	public static final int RESERVATION = 1;
 	public static final int WALTING = 2;
 	public static final int HOLDING = 3;
 	public static final int CONFIRMATION = 4;
 	public static final int CANCELLATION = 5;
-	
-	public static final String FIRST_CLASS = "1";
-	public static final String BUSSINESS_CLASS = "2";
-	public static final String ECONOMIC_CLASS = "3";
 
 	public static final int CUSTOMER = 1;
 	public static final int TRAVELAGENT = 2;
