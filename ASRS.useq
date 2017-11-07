@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="asrs.gui.customer.SearchFlightPanel" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/gui/customer/SearchFlightPanel.java" binary="false" label="searchFlightPanel" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="160" y="0"/>    
+    <execution id="2">      
+      <position height="1810" width="146" x="5" y="99"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="138" width="7" x="75" y="1729"/>    
+    </execution>    
+    <execution id="4">      
+      <position height="1555" width="7" x="75" y="141"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="21" width="0" x="0" y="360"/>    
+    </execution>  
+  </object>  
+  <object id="52" language="java" name="javax.swing.JOptionPane" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="&lt;static&gt;" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="203"/>    
+    </execution>  
+  </object>  
+  <object id="53" language="java" name="java.util.Vector" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="rows" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="13">      
+      <position height="21" width="0" x="0" y="255"/>    
+    </execution>    
+    <execution id="43">      
+      <position height="21" width="0" x="0" y="1395"/>    
+    </execution>  
+  </object>  
+  <object id="54" language="java" name="asrs.controller.AllFlights" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/controller/AllFlights.java" binary="false" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="15">      
+      <position height="21" width="0" x="0" y="297"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="21" width="0" x="0" y="391"/>    
+    </execution>  
+  </object>  
+  <object id="55" language="java" name="java.util.ArrayList" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="index" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="433"/>    
+    </execution>    
+    <execution id="27">      
+      <position height="21" width="0" x="0" y="672"/>    
+    </execution>    
+    <execution id="47">      
+      <position height="21" width="0" x="0" y="1550"/>    
+    </execution>  
+  </object>  
+  <object id="56" language="java" name="java.util.Iterator" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="iterator" type="interface" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="23">      
+      <position height="21" width="0" x="0" y="547"/>    
+    </execution>  
+  </object>  
+  <object id="57" language="java" name="java.io.PrintStream" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="589"/>    
+    </execution>  
+  </object>  
+  <object id="58" language="java" name="java.util.Vector" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="row" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="29">      
+      <position height="21" width="0" x="0" y="754"/>    
+    </execution>    
+    <execution id="31">      
+      <position height="21" width="0" x="0" y="837"/>    
+    </execution>    
+    <execution id="35">      
+      <position height="21" width="0" x="0" y="1023"/>    
+    </execution>    
+    <execution id="39">      
+      <position height="21" width="0" x="0" y="1209"/>    
+    </execution>  
+  </object>  
+  <object id="59" language="java" name="java.util.Vector" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="itemRow" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="33">      
+      <position height="21" width="0" x="0" y="920"/>    
+    </execution>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="1106"/>    
+    </execution>    
+    <execution id="41">      
+      <position height="21" width="0" x="0" y="1292"/>    
+    </execution>  
+  </object>  
+  <object id="60" language="java" name="java.util.Vector" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="data" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="45">      
+      <position height="21" width="0" x="0" y="1508"/>    
+    </execution>  
+  </object>  
+  <object id="61" language="java" name="javax.swing.JTable" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="resultTable" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="49">      
+      <position height="21" width="0" x="0" y="1612"/>    
+    </execution>  
+  </object>  
+  <object id="62" language="java" name="javax.swing.table.DefaultTableModel" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="51">      
+      <position height="21" width="0" x="0" y="1654"/>    
+    </execution>  
+  </object>  
+  <object id="63" language="java" name="asrs.controller.AllFlights" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/controller/AllFlights.java" binary="false" label="allFlights" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="289" y="0"/>    
+    <execution id="6">      
+      <position height="182" width="87" x="155" y="1706"/>    
+    </execution>  
+  </object>  
+  <object id="65" language="java" name="asrs.gui.customer.ViewFlightDetailDialog" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/gui/customer/ViewFlightDetailDialog.java" binary="false" 
+    label="viewFlightDetailDialog" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="524" y="0"/>    
+    <execution id="9">      
+      <position height="96" width="174" x="246" y="1750"/>    
+    </execution>    
+    <execution id="67">      
+      <position height="21" width="174" x="246" y="1804"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="68" interaction-operator="OPT">    
+    <interaction-operand id="69" constraint="getSource() == defaultString || getDestination() == defaultString">      
+      <fragment refId="10"/>    
+    </interaction-operand>  
+  </combined-fragment>  
+  <combined-fragment id="70" interaction-operator="OPT">    
+    <interaction-operand id="71" constraint="data != null">      
+      <fragment refId="72"/>      
+      <fragment refId="73"/>    
+    </interaction-operand>    
+    <combined-fragment id="73" interaction-operator="LOOP">      
+      <interaction-operand id="74" constraint="for:it.hasNext()">        
+        <fragment refId="24"/>        
+        <fragment refId="75"/>        
+        <fragment refId="22"/>      
+      </interaction-operand>      
+      <combined-fragment id="75" interaction-operator="ALT">        
+        <interaction-operand id="76" constraint="!itemRow.get(asrs.model.Flight.SOURCE).equals(getSource())">          
+          <fragment refId="26"/>        
+        </interaction-operand>        
+        <interaction-operand id="77" constraint="else">          
+          <fragment refId="78"/>          
+          <fragment refId="79"/>          
+          <fragment refId="28"/>          
+          <fragment refId="80"/>          
+          <fragment refId="81"/>        
+        </interaction-operand>        
+        <combined-fragment id="78" interaction-operator="CRITICAL">          
+          <interaction-operand id="82">            
+            <fragment refId="83"/>            
+            <fragment refId="30"/>          
+          </interaction-operand>          
+          <combined-fragment id="83" interaction-operator="CRITICAL">            
+            <interaction-operand id="84">              
+              <fragment refId="32"/>            
+            </interaction-operand>          
+          </combined-fragment>        
+        </combined-fragment>        
+        <combined-fragment id="80" interaction-operator="CRITICAL">          
+          <interaction-operand id="85">            
+            <fragment refId="86"/>            
+            <fragment refId="34"/>          
+          </interaction-operand>          
+          <combined-fragment id="86" interaction-operator="CRITICAL">            
+            <interaction-operand id="87">              
+              <fragment refId="36"/>            
+            </interaction-operand>          
+          </combined-fragment>        
+        </combined-fragment>        
+        <combined-fragment id="81" interaction-operator="CRITICAL">          
+          <interaction-operand id="88">            
+            <fragment refId="38"/>            
+            <fragment refId="89"/>          
+          </interaction-operand>          
+          <combined-fragment id="89" interaction-operator="CRITICAL">            
+            <interaction-operand id="90">              
+              <fragment refId="40"/>            
+            </interaction-operand>          
+          </combined-fragment>        
+        </combined-fragment>        
+        <combined-fragment id="79" interaction-operator="CRITICAL">          
+          <interaction-operand id="91">            
+            <fragment refId="42"/>          
+          </interaction-operand>        
+        </combined-fragment>      
+      </combined-fragment>    
+    </combined-fragment>    
+    <combined-fragment id="72" interaction-operator="LOOP">      
+      <interaction-operand id="92" constraint="for:j&lt;index.size()">        
+        <fragment refId="46"/>        
+        <fragment refId="44"/>      
+      </interaction-operand>    
+    </combined-fragment>  
+  </combined-fragment>  
+  <message id="3" operation="dbInit():void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="5" operation="getFlightDetail(int,java.lang.Object):java.util.Vector" asynchronous="false" x="115" 
+    y="204">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </message>  
+  <message id="8" operation="ViewFlightDetailDialog(javax.swing.JFrame,java.lang.String,boolean,java.util.Vector)" 
+    asynchronous="false" x="98" y="154">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="Vector()" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="14" operation="getInstance():asrs.controller.AllFlights" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="16" operation="getDestination():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="17"/>  
+  </message>  
+  <message id="18" operation="getFlight(int,java.lang.Object):java.util.Vector" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="20" operation="ArrayList()" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="next():E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="println(java.lang.Object):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" operation="add(E):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="27"/>  
+  </message>  
+  <message id="28" operation="Vector()" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" operation="add(E):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="32" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="33"/>  
+  </message>  
+  <message id="34" operation="add(E):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="35"/>  
+  </message>  
+  <message id="36" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="38" operation="add(E):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="40" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="41"/>  
+  </message>  
+  <message id="42" operation="add(E):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="43"/>  
+  </message>  
+  <message id="44" operation="remove(java.lang.Object):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="45"/>  
+  </message>  
+  <message id="46" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="47"/>  
+  </message>  
+  <message id="48" operation="setModel(javax.swing.table.TableModel):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="49"/>  
+  </message>  
+  <message id="50" operation="DefaultTableModel(java.util.Vector,java.util.Vector)" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="51"/>  
+  </message>  
+  <message id="64" asynchronous="false">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="66" operation="jbInit():void" asynchronous="false">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="67"/>  
+  </message>
+</sequence-diagram>

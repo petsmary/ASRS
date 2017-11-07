@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
-  associations="true" dependencies="false" nesting-relationships="true">  
-  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="brs.db.BookDataAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/BookDataAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="209" width="234" x="723" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="brs.db.JDBCCustomerAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/JDBCCustomerAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="191" width="301" x="41" y="304"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="brs.db.BookingDataAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/BookingDataAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="234" x="382" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="brs.db.JDBCBookAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/JDBCBookAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="227" width="301" x="723" y="304"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="brs.db.CustomerDataAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/CustomerDataAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="173" width="234" x="41" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="brs.db.JDBCBookingAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/JDBCBookingAccessor.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="245" width="301" x="382" y="304"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="7">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="8">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="9">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
     <operations public="true" package="true" protected="true" private="true" static="true"/>  

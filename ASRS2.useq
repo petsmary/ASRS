@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="asrs.gui.customer.booking.BookingFrame" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/gui/customer/booking/BookingFrame.java" binary="false" label="bookingFrame" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="142" y="0"/>    
+    <execution id="2">      
+      <position height="501" width="124" x="5" y="104"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="167" width="7" x="64" y="333"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="375"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="21" width="0" x="0" y="427"/>    
+    </execution>  
+  </object>  
+  <object id="12" language="java" name="java.awt.Window" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="frame" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="458"/>    
+    </execution>  
+  </object>  
+  <object id="13" language="java" name="asrs.gui.customer.booking.AirplanePanel" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/gui/customer/booking/AirplanePanel.java" binary="false" label="airplanePanel" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="189" y="0"/>    
+    <execution id="4">      
+      <position height="459" width="124" x="133" y="125"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="271" width="7" x="192" y="271"/>    
+    </execution>    
+    <execution id="18">      
+      <position height="203" width="7" x="273" y="318"/>    
+    </execution>  
+  </object>  
+  <object id="20" language="java" name="asrs.gui.customer.booking.SeatPanel" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/asrs/gui/customer/booking/SeatPanel.java" binary="false" label="seatPanel" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="370" y="0"/>    
+    <execution id="15">      
+      <position height="389" width="124" x="261" y="174"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="AirplanePanel(asrs.gui.customer.booking.BookingFrame,java.util.Vector,java.lang.String)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="setVisible(boolean):void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="dispose():void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="setVisible(boolean):void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="14" 
+    operation="SeatPanel(javax.swing.JFrame,asrs.gui.customer.booking.AirplanePanel,int,int,java.util.Vector)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </message>  
+  <message id="17" 
+    operation="goReservation(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.util.Vector):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="19" operation="exit():void" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="5"/>  
+  </message>  
+  <message id="21" operation="setSeatNumber(java.lang.String):void" asynchronous="false" x="276" y="216">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>
+</sequence-diagram>

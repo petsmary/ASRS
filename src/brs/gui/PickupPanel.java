@@ -135,9 +135,11 @@ public class PickupPanel extends JPanel {
 			if (bookingListBox.isSelectionEmpty()) {
 				cancellButton.setEnabled(false);
 			} else {
-				if (bookingList.get(bookingListBox.getSelectedIndex()).getStatus() != 4 || bookingList.get(bookingListBox.getSelectedIndex()).getStatus() != 5) {
+				if (bookingList.get(bookingListBox.getSelectedIndex()).getStatus() == 3 ) {
 
 					cancellButton.setEnabled(true);
+				} else {
+					cancellButton.setEnabled(false);
 				}
 			}
 

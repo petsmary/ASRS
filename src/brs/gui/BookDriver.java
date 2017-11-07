@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
@@ -32,6 +33,24 @@ public class BookDriver extends JFrame {
 	/**
 	 *  This constructor creates the BookPanel
 	 */
+	public BookDriver(JFrame frame) {
+		this();
+		frame.setEnabled(false);
+		WindowListener[] wl = (WindowListener[])this.getListeners(WindowListener.class);
+        for (int i = 0; i < wl.length; i++) {
+            this.removeWindowListener(wl[i]);
+        }
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent evt) {
+				frame.setEnabled(true);
+				setVisible(false);
+				dispose();
+			}
+		});
+	}
+	
 	public BookDriver() {
 
 		//

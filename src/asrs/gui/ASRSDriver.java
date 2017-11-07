@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,14 +18,31 @@ import asrs.db.LoadProperties;
 import asrs.gui.customer.CustomerFrame;
 
 @SuppressWarnings("serial")
-public class ControlFrame extends JFrame {
+public class ASRSDriver extends JFrame {
 
 	JPanel choosePanel;
 	JButton customer;
 	JButton travelAgent;
 	JButton airline;
 
-	public ControlFrame() {
+	public ASRSDriver(JFrame frame) {
+		this();
+		frame.setEnabled(false);
+		WindowListener[] wl = (WindowListener[])this.getListeners(WindowListener.class);
+        for (int i = 0; i < wl.length; i++) {
+            this.removeWindowListener(wl[i]);
+        }
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent evt) {
+				frame.setEnabled(true);
+				exit();
+			}
+		});
+	}
+
+	public ASRSDriver() {
 		setTitle("Welcome to Airline Seat Reservation System");
 
 		choosePanel = new JPanel(new GridLayout());
@@ -34,7 +52,7 @@ public class ControlFrame extends JFrame {
 		airline = new JButton(ASRS.STRING_AIRLINE);
 
 		choosePanel.add(customer);
-		//choosePanel.add(travelAgent);
+		// choosePanel.add(travelAgent);
 		choosePanel.add(airline);
 		add(choosePanel);
 
@@ -47,54 +65,54 @@ public class ControlFrame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				customer();				
+				customer();
 			}
 
 		});
-		
+
 		travelAgent.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				travelAgent();				
+				travelAgent();
 			}
 
 		});
-		
+
 		airline.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				airline();				
+				airline();
 			}
 
 		});
 
 		addWindowListener(new WindowAdapter() {
-			
+
 			@Override
-			public void windowClosing(WindowEvent evt) {
+			public void windowClosing(WindowEvent evt) {				
 				exit();
+				System.exit(0);
 			}
 		});
 	}
-	
+
 	private void travelAgent() {
 		LoginDialog login = new LoginDialog(this, ASRS.TRAVELAGENT);
-		if(login.isSucceeded()) {
-			
+		if (login.isSucceeded()) {
+
 		}
 	}
-	
-	
+
 	private void airline() {
 		LoginDialog login = new LoginDialog(this, ASRS.AIRLINE);
-		if(login.isSucceeded()) {
+		if (login.isSucceeded()) {
 			setEnabled(false);
 			new asrs.gui.airline.AirlineFrame(this, login.getUsername());
 		}
 	}
-	
+
 	private void customer() {
 		setEnabled(false);
 		new CustomerFrame(this);
@@ -104,8 +122,13 @@ public class ControlFrame extends JFrame {
 		try {
 			asrs.db.LoadProperties.getInstance().getConnection().close();
 		} catch (Exception ex) {
-			
+
 		}
-		System.exit(0);
+		setVisible(false);
+		dispose();
+	}
+	
+	public static void main(String [] args) {
+		new ASRSDriver();
 	}
 }

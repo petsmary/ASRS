@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.2.2" icons="true" generate-combined-fragments="true">  
+  <object id="1" language="java" name="brs.gui.BookPanel" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/gui/BookPanel.java" binary="false" label="bookPanel" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="105" y="0"/>    
+    <execution id="2">      
+      <position height="856" width="96" x="5" y="99"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" name="brs.gui.BookPanel.DetailsActionListener" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/gui/BookPanel.java" binary="false" label="detailsActionListener" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="211" y="0"/>    
+    <execution id="4">      
+      <position height="814" width="167" x="105" y="120"/>    
+    </execution>  
+  </object>  
+  <object id="14" language="java" name="javax.swing.JList" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="bookListBox" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="141"/>    
+    </execution>  
+  </object>  
+  <object id="15" language="java" name="java.util.ArrayList" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="bookArrayList" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="9">      
+      <position height="21" width="0" x="0" y="183"/>    
+    </execution>  
+  </object>  
+  <object id="16" language="java" name="brs.gui.BookDetailsDialog" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/gui/BookDetailsDialog.java" binary="false" label="myDetailsDialog" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="225"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="646" width="0" x="0" y="267"/>    
+    </execution>  
+  </object>  
+  <object id="19" language="java" name="brs.gui.BookDetailsDialog.WaitButtonActionListener" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/gui/BookDetailsDialog.java" binary="false" label="waitButtonActionListener" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="752" y="0"/>    
+    <execution id="18">      
+      <position height="604" width="196" x="628" y="288"/>    
+    </execution>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="748"/>    
+    </execution>  
+  </object>  
+  <object id="40" language="java" name="brs.db.CustomerDataAccessor" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/db/CustomerDataAccessor.java" binary="false" label="customerDataAccessor" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="21">      
+      <position height="21" width="0" x="0" y="309"/>    
+    </execution>  
+  </object>  
+  <object id="41" language="java" name="javax.swing.text.JTextComponent" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" label="email" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="23">      
+      <position height="21" width="0" x="0" y="351"/>    
+    </execution>  
+  </object>  
+  <object id="42" language="java" name="javax.swing.JPasswordField" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="password" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="393"/>    
+    </execution>  
+  </object>  
+  <object id="43" language="java" name="brs.model.Booking" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/model/Booking.java" binary="false" label="booking" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="27">      
+      <position height="21" width="0" x="0" y="476"/>    
+    </execution>  
+  </object>  
+  <object id="44" language="java" name="brs.model.Customer" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/model/Customer.java" binary="false" label="customer" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="29">      
+      <position height="21" width="0" x="0" y="518"/>    
+    </execution>    
+    <execution id="35">      
+      <position height="21" width="0" x="0" y="685"/>    
+    </execution>  
+  </object>  
+  <object id="45" language="java" name="brs.model.Book" project="OFDPAssignment" 
+    file="/OFDPAssignment/src/brs/model/Book.java" binary="false" label="myBook" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="31">      
+      <position height="21" width="0" x="0" y="560"/>    
+    </execution>  
+  </object>  
+  <object id="46" language="java" name="javax.swing.JOptionPane" project="OFDPAssignment" 
+    file="/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/jre/lib/rt.jar" binary="true" 
+    label="&lt;static&gt;" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="33">      
+      <position height="21" width="0" x="0" y="643"/>    
+    </execution>    
+    <execution id="39">      
+      <position height="21" width="0" x="0" y="850"/>    
+    </execution>  
+  </object>  
+  <combined-fragment id="47" interaction-operator="ALT">    
+    <interaction-operand id="48" constraint="customer != null">      
+      <fragment refId="30"/>      
+      <fragment refId="49"/>      
+      <fragment refId="28"/>      
+      <fragment refId="26"/>    
+    </interaction-operand>    
+    <interaction-operand id="50" constraint="else">      
+      <fragment refId="38"/>    
+    </interaction-operand>    
+    <combined-fragment id="49" interaction-operator="ALT">      
+      <interaction-operand id="51" constraint="bookingDataAccessor.put(booking)">        
+        <fragment refId="34"/>        
+        <fragment refId="36"/>        
+        <fragment refId="32"/>      
+      </interaction-operand>      
+      <interaction-operand id="52" constraint="else"/>    
+    </combined-fragment>  
+  </combined-fragment>  
+  <message id="3" operation="actionPerformed(java.awt.event.ActionEvent):void" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="getSelectedIndex():int" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8" operation="get(int):E" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10" operation="BookDetailsDialog(java.awt.Frame,brs.model.Book)" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>  
+  <message id="12" operation="setVisible(boolean):void" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="17" operation="actionPerformed(java.awt.event.ActionEvent):void" asynchronous="false">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="18"/>  
+  </message>  
+  <message id="20" operation="getCustomer(java.lang.String,java.lang.String):brs.model.Customer" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="21"/>  
+  </message>  
+  <message id="22" operation="getText():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="getText():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" operation="Booking(int,int,int,int,java.util.Date)" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="27"/>  
+  </message>  
+  <message id="28" operation="getId():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="29"/>  
+  </message>  
+  <message id="30" operation="getBookId():int" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="32" operation="showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="33"/>  
+  </message>  
+  <message id="34" operation="getLastName():java.lang.String" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="35"/>  
+  </message>  
+  <message id="36" operation="setVisible(boolean):void" asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="38" operation="showMessageDialog(java.awt.Component,java.lang.Object,java.lang.String,int):void" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>
+</sequence-diagram>

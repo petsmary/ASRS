@@ -138,8 +138,11 @@ public class CancellBookingPanel extends JPanel {
 			if (bookingListBox.isSelectionEmpty()) {
 				cancellButton.setEnabled(false);
 			} else {
-				if (bookingList.get(bookingListBox.getSelectedIndex()).getStatus() != 5) {
-
+				if (bookingList.get(bookingListBox.getSelectedIndex()).getStatus() == 5  ) {
+					cancellButton.setEnabled(false);
+				} else if (bookingList.get(bookingListBox.getSelectedIndex()).getStatus() == 4) {
+					cancellButton.setEnabled(false);
+				}	else {
 					cancellButton.setEnabled(true);
 				}
 			}

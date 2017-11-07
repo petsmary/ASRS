@@ -42,17 +42,20 @@ public class SeatPanel extends JPanel {
 			for (Iterator it = v.iterator(); it.hasNext();) {
 				Vector b = (Vector) it.next();
 				Object book = b.get(asrs.model.Booking.BOOKINGNUMBER);
-				Vector bts = asrs.controller.GetBookingTicket.getInstance().get(asrs.model.BookingTicket.BOOKINGNUMBER, book);
-				Vector bt = (Vector) bts.get(0);
-				Object key = bt.get(asrs.model.BookingTicket.TICKETNUMBER);
-				Vector ts = asrs.controller.AllTickets.getInstance().get(asrs.model.Ticket.TICKETNUMBER, key);
-				Vector t = (Vector) ts.get(0);
-				if (b.get(asrs.model.Booking.STATUS).equals(ASRS.RESERVATION + "")) {
-					reservation.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
-				} else if (b.get(asrs.model.Booking.STATUS).equals(ASRS.HOLDING + "")) {
-					holdings.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
-				} else if (b.get(asrs.model.Booking.STATUS).equals(ASRS.CONFIRMATION + "")) {
-					confirm.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
+				Vector bts = asrs.controller.GetBookingTicket.getInstance().get(asrs.model.BookingTicket.BOOKINGNUMBER,
+						book);
+				if (bts.size() > 0) {
+					Vector bt = (Vector) bts.get(0);
+					Object key = bt.get(asrs.model.BookingTicket.TICKETNUMBER);
+					Vector ts = asrs.controller.AllTickets.getInstance().get(asrs.model.Ticket.TICKETNUMBER, key);
+					Vector t = (Vector) ts.get(0);
+					if (b.get(asrs.model.Booking.STATUS).equals(ASRS.RESERVATION + "")) {
+						reservation.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
+					} else if (b.get(asrs.model.Booking.STATUS).equals(ASRS.HOLDING + "")) {
+						holdings.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
+					} else if (b.get(asrs.model.Booking.STATUS).equals(ASRS.CONFIRMATION + "")) {
+						confirm.add((String) t.get(asrs.model.Ticket.SEATNUMBER));
+					}
 				}
 			}
 		}
