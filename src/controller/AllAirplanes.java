@@ -71,7 +71,7 @@ public class AllAirplanes {
 	}
 	
 	public Vector getCoulumnName() {
-		return theAirline.getColumnNames();
+		return theAirplane.getColumnNames();
 	}
 
 	public Airline getAirlineDetails(String id) {

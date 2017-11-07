@@ -6,6 +6,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -18,8 +19,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
-import gui.LoginDialog;
 
 @SuppressWarnings("serial")
 public class SearchFlightPanel extends JPanel {
@@ -40,7 +39,7 @@ public class SearchFlightPanel extends JPanel {
 
 	private JButton searchFlight;
 
-	private String defaultString = "------------";
+	private String defaultString = "";
 	private Vector rows = new Vector();
 	private Vector columns = new Vector();
 	private Vector data = controller.AllFlights.getInstance().getTable();
@@ -133,12 +132,15 @@ public class SearchFlightPanel extends JPanel {
 		}
 		rows = new Vector();
 		data = controller.AllFlights.getInstance().getFlight(model.Flight.DESTINATION, getDestination());
+		ArrayList<Integer> index = new ArrayList<Integer> ();
+		int i = 0;
 		if (data != null) {			
 			for (Iterator it = data.iterator(); it.hasNext();) {
 				Vector itemRow = (Vector) it.next();
 				System.out.println(data);				
 				if (!itemRow.get(model.Flight.SOURCE).equals(getSource())) {
-					data.remove(itemRow);
+					//data.remove(itemRow);
+					index.add(i);
 				} else {
 					Vector row = new Vector();
 					row.add(itemRow.get(model.Flight.NAME));
@@ -146,7 +148,11 @@ public class SearchFlightPanel extends JPanel {
 					row.add(itemRow.get(model.Flight.ARRIVE));
 					rows.add(row);
 				}
-			}			
+				i++;
+			}
+			for (int j=0; j<index.size(); j++) {
+				data.remove(index.get(j));
+			}
 		}
 
 		resultTable.setModel(new DefaultTableModel(rows, columns) {

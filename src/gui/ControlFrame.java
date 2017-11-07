@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import controller.ASRS;
+import db.LoadProperties;
 import gui.customer.CustomerFrame;
 
 @SuppressWarnings("serial")
@@ -33,7 +34,7 @@ public class ControlFrame extends JFrame {
 		airline = new JButton(ASRS.STRING_AIRLINE);
 
 		choosePanel.add(customer);
-		choosePanel.add(travelAgent);
+		//choosePanel.add(travelAgent);
 		choosePanel.add(airline);
 		add(choosePanel);
 
@@ -89,7 +90,8 @@ public class ControlFrame extends JFrame {
 	private void airline() {
 		LoginDialog login = new LoginDialog(this, ASRS.AIRLINE);
 		if(login.isSucceeded()) {
-			
+			setEnabled(false);
+			new gui.airline.AirlineFrame(this, login.getUsername());
 		}
 	}
 	
@@ -99,6 +101,11 @@ public class ControlFrame extends JFrame {
 	}
 
 	private void exit() {
+		try {
+			db.LoadProperties.getInstance().getConnection().close();
+		} catch (Exception ex) {
+			
+		}
 		System.exit(0);
 	}
 }

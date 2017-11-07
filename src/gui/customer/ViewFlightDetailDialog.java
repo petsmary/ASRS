@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.ASRS;
 import gui.customer.booking.BookingFrame;
 
 @SuppressWarnings("serial")
@@ -39,7 +40,7 @@ public class ViewFlightDetailDialog extends JDialog {
 	private void goBooking() {
 		setVisible(false);
 		dispose();
-		new BookingFrame(frame, flight);
+		new BookingFrame(frame, flight, jButton1.getName());
 	}
 
 	private void jbInit() {
@@ -93,7 +94,17 @@ public class ViewFlightDetailDialog extends JDialog {
 		jlabel11.setFont(new Font(jlabel7.getFont().getName(), Font.PLAIN, 18));
 		jlabel15.setFont(new Font(jlabel7.getFont().getName(), Font.PLAIN, 18));
 
-		jButton1 = new JButton("Go Booking");
+		int seatLeft = Integer.parseInt((String) first.get(model.FlightDetail.SEATLEFT))
+				+ Integer.parseInt((String) bussiness.get(model.FlightDetail.SEATLEFT))
+				+ Integer.parseInt((String) economic.get(model.FlightDetail.SEATLEFT));
+
+		if (seatLeft > 0) {
+			jButton1 = new JButton("Go Booking");
+			jButton1.setName(ASRS.STRING_RESERVATION);
+		} else {
+			jButton1 = new JButton("Go Waiting");
+			jButton1.setName(ASRS.STRING_WALTING);
+		}
 
 		constraints.weightx = 1;
 		constraints.weighty = 1;

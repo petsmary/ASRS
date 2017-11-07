@@ -1,4 +1,4 @@
-package gui.customer;
+package gui.airline;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -11,16 +11,16 @@ import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import controller.ASRS;
 
 @SuppressWarnings("serial")
-public class CheckReservationPanel extends JPanel {
+public class ChangeBookingStatus extends JPanel {
 
 	private JFrame frame;
 
@@ -30,8 +30,8 @@ public class CheckReservationPanel extends JPanel {
 	private JLabel lbookingNumer;
 	private JLabel lphone;
 
-	private JTextField bookingNumber;
-	private JTextField phone;
+	private JComboBox<String> flightNameList;
+	private JComboBox<String> bookingNumberList;
 
 	private JButton search;
 
@@ -44,7 +44,10 @@ public class CheckReservationPanel extends JPanel {
 	private JLabel classType = new JLabel();
 	private JLabel seatNumber = new JLabel();
 	private JLabel status1 = new JLabel();
-	private JButton button = new JButton("Cancel Booking");
+
+	private JButton button = new JButton("Finish Payment");
+	private JButton button2 = new JButton("Ticket Take up");
+	private JButton button3 = new JButton("Cancel Booking");
 
 	private void toShow(Vector booking, Vector ticket, Vector flight) {
 		bookingNumer.setText("	Booking Number:	" + booking.get(model.Booking.BOOKINGNUMBER));
@@ -67,25 +70,26 @@ public class CheckReservationPanel extends JPanel {
 			seatNumber.setText("	Seat Number:	" + ticket.get(model.Ticket.SEATNUMBER));
 		}
 		String status = "";
-		button.setText("Cancel Booking");
-		button.setVisible(true);
+		button3.setVisible(true);
 
 		switch (Integer.parseInt((String) booking.get(model.Booking.STATUS))) {
 		case ASRS.RESERVATION:
 			status = ASRS.STRING_RESERVATION;
+			button.setVisible(true);
 			break;
 		case ASRS.WALTING:
 			status = ASRS.STRING_WALTING;
 			break;
 		case ASRS.HOLDING:
 			status = ASRS.STRING_HOLDING;
+			button2.setVisible(true);
 			break;
 		case ASRS.CONFIRMATION:
 			status = ASRS.STRING_CONFIRMATION;
 			break;
 		case ASRS.CANCELLATION:
 			status = ASRS.STRING_CANCELLATION;
-			button.setVisible(false);
+			button3.setVisible(false);
 			break;
 		}
 
@@ -93,17 +97,33 @@ public class CheckReservationPanel extends JPanel {
 
 	}
 
-	public CheckReservationPanel(JFrame frame) {
+	public ChangeBookingStatus(JFrame frame, Object key) {
 		this.frame = frame;
-
+		setSize(600, 400);
 		setLayout(new BorderLayout());
 
+		Vector airplanesList = controller.AllAirplanes.getInstance().getAirplane(model.Airplane.AIRLINE, key);
+		Vector flightNames = new Vector();
+		flightNames.add("");
+		Vector flightId = new Vector();
+		flightId.add("");
+		for (Iterator it = airplanesList.iterator(); it.hasNext();) {
+			Vector v = (Vector) it.next();
+			Object airplane = v.get(model.Airplane.ID);
+			Vector flightsList = controller.AllFlights.getInstance().getFlight(model.Flight.AIRPLANE, airplane);
+			for (Iterator it2 = flightsList.iterator(); it2.hasNext();) {
+				Vector v2 = (Vector) it2.next();
+				flightNames.add(v2.get(model.Flight.NAME));
+				flightId.add(v2.get(model.Flight.ID));
+			}
+		}
+
 		inputPanel = new JPanel(new GridBagLayout());
-		showPanel = new JPanel(new GridLayout(5, 2));
-		lbookingNumer = new JLabel("	Booking Number");
-		lphone = new JLabel("	Phone Number");
-		bookingNumber = new JTextField();
-		phone = new JTextField();
+		showPanel = new JPanel(new GridLayout(6, 2));
+		lbookingNumer = new JLabel("	Flight Name");
+		lphone = new JLabel("	Booking Number");
+		bookingNumberList = new JComboBox<String>();
+		flightNameList = new JComboBox<String>(flightNames);
 		search = new JButton("Enter");
 
 		constraints.weightx = 1;
@@ -113,8 +133,8 @@ public class CheckReservationPanel extends JPanel {
 		addGB(lbookingNumer, x = 0, y = 0);
 		addGB(lphone, x = 0, y = 1);
 		constraints.weightx = 4;
-		addGB(bookingNumber, x = 1, y = 0);
-		addGB(phone, x = 1, y = 1);
+		addGB(flightNameList, x = 1, y = 0);
+		addGB(bookingNumberList, x = 1, y = 1);
 		constraints.weightx = 1;
 		addGB(search, x = 2, y = 1);
 
@@ -131,7 +151,27 @@ public class CheckReservationPanel extends JPanel {
 		showPanel.add(seatNumber);
 		showPanel.add(status1);
 		showPanel.add(button);
+		showPanel.add(button2);
+		showPanel.add(button3);
 		button.setVisible(false);
+		button2.setVisible(false);
+		button3.setVisible(false);
+		flightNameList.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int flight = flightNameList.getSelectedIndex();
+				bookingNumberList.removeAllItems();
+				bookingNumberList.addItem("");
+				System.out.println(flightId.get(flight));
+				Vector vector = controller.AllBookings.getInstance().get(model.Booking.FLIGHTDETAIL,
+						flightId.get(flight));
+				Vector bookingsList = new Vector();
+				for (Iterator it = vector.iterator(); it.hasNext();) {
+					Vector v = (Vector) it.next();
+					bookingNumberList.addItem((String) v.get(model.Booking.BOOKINGNUMBER));
+				}
+			}
+		});
+
 		search.addActionListener(new ActionListener() {
 
 			@Override
@@ -141,7 +181,58 @@ public class CheckReservationPanel extends JPanel {
 			}
 
 		});
+
 		button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				booking.set(model.Booking.STATUS, ASRS.HOLDING);
+				controller.AllBookings.getInstance().change(booking);
+				bookingNumer.setText("");
+				firstName.setText("");
+				phone2.setText("");
+				email.setText("");
+				flightName.setText("");
+				ticketName.setText("");
+				classType.setText("");
+				seatNumber.setText("");
+				status1.setText("");
+				button.setVisible(false);
+				button2.setVisible(false);
+				button3.setVisible(false);
+				JOptionPane.showMessageDialog(ChangeBookingStatus.this, "Successful to Do Payment",
+						"Change Booking Status", JOptionPane.INFORMATION_MESSAGE);
+
+			}
+		});
+		
+		button2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				booking.set(model.Booking.STATUS, ASRS.CONFIRMATION);
+				controller.AllBookings.getInstance().change(booking);
+				bookingTicket.set(model.BookingTicket.ISTAKEN, "true");
+				controller.GetBookingTicket.getInstance().change(bookingTicket);
+				bookingNumer.setText("");
+				firstName.setText("");
+				phone2.setText("");
+				email.setText("");
+				flightName.setText("");
+				ticketName.setText("");
+				classType.setText("");
+				seatNumber.setText("");
+				status1.setText("");
+				button.setVisible(false);
+				button2.setVisible(false);
+				button3.setVisible(false);
+				JOptionPane.showMessageDialog(ChangeBookingStatus.this, "Successful to Pick Up Ticket",
+						"Change Booking Status", JOptionPane.INFORMATION_MESSAGE);
+
+			}
+		});
+
+		button3.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -171,10 +262,10 @@ public class CheckReservationPanel extends JPanel {
 				seatNumber.setText("");
 				status1.setText("");
 				button.setVisible(false);
-				bookingNumber.setText("");
-				phone.setText("");
-				JOptionPane.showMessageDialog(CheckReservationPanel.this, "Successful to Cancel Ticket", "Cancellation",
-						JOptionPane.INFORMATION_MESSAGE);
+				button2.setVisible(false);
+				button3.setVisible(false);
+				JOptionPane.showMessageDialog(ChangeBookingStatus.this, "Successful to Cancell Booking",
+						"Change Booking Status", JOptionPane.INFORMATION_MESSAGE);
 
 			}
 
@@ -194,31 +285,27 @@ public class CheckReservationPanel extends JPanel {
 	private Vector bookingTicket;
 
 	private void goSearching() {
-		Vector vector = controller.AllBookings.getInstance().get(model.Booking.BOOKINGNUMBER, bookingNumber.getText());
+		Vector vector = controller.AllBookings.getInstance().get(model.Booking.BOOKINGNUMBER,
+				bookingNumberList.getSelectedItem());
 		if (vector.size() != 0) {
 			Vector v = (Vector) vector.get(0);
 			booking = (Vector) vector.get(0);
-			if (v.get(model.Booking.PHONE).equals(phone.getText())) {
-				try {
-					Vector v2 = controller.GetBookingTicket.getInstance().get(model.BookingTicket.BOOKINGNUMBER,
-							bookingNumber.getText());
-					bookingTicket = (Vector) v2.get(0);
-					Vector v3 = controller.AllTickets.getInstance().get(model.Ticket.TICKETNUMBER,
-							((Vector) v2.get(0)).get(model.Ticket.TICKETNUMBER));
-					ticket = (Vector) v3.get(0);
-					Vector v4 = controller.AllFlights.getInstance().getFlight(v.get(model.Booking.FLIGHTDETAIL));
-					System.out.println(vector + "" + v2 + "" + v3 + "" + v4);
-					toShow(v, (Vector) v3.get(0), v4);
-				} catch (Exception ex) {
-					toShow(booking, null, null);
-				}
-			} else {
-				JOptionPane.showMessageDialog(CheckReservationPanel.this, "Incorrect Phone Number", "Check Reservation",
-						JOptionPane.ERROR_MESSAGE);
+			try {
+				Vector v2 = controller.GetBookingTicket.getInstance().get(model.BookingTicket.BOOKINGNUMBER,
+						bookingNumberList.getSelectedItem());
+				bookingTicket = (Vector) v2.get(0);
+				Vector v3 = controller.AllTickets.getInstance().get(model.Ticket.TICKETNUMBER,
+						((Vector) v2.get(0)).get(model.Ticket.TICKETNUMBER));
+				ticket = (Vector) v3.get(0);
+				Vector v4 = controller.AllFlights.getInstance().getFlight(v.get(model.Booking.FLIGHTDETAIL));
+				System.out.println(vector + "" + v2 + "" + v3 + "" + v4);
+				toShow(v, (Vector) v3.get(0), v4);
+			} catch (Exception ex) {
+				toShow(booking, null, null);
 			}
 		} else {
-			JOptionPane.showMessageDialog(CheckReservationPanel.this, "Incorrect Booking Number", "Check Reservation",
-					JOptionPane.ERROR_MESSAGE);
+
 		}
 	}
+
 }

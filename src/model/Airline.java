@@ -4,24 +4,24 @@ import java.util.Vector;
 
 public class Airline extends Company {
 
-	private Vector airline;
+	private Vector airplane;
 	
-	public static final int AIRLINE = 4;
+	public static final int AIRPLANE = 4;
 	
 	public Airline(String id, String name, String loginName, String password, Vector airline) {
 		super(id, name, loginName, password);
-		this.airline = airline;
+		this.airplane = airline;
 		// TODO Auto-generated constructor stub
 	}
 	
 	public Airline(Vector airline, Vector airplane) {
 		super((String) airline.get(ID), (String) airline.get(NAME), (String) airline.get(LOGINNAME), (String) airline.get(PASSWORD));
-		this.airline = airline;
+		this.airplane = airline;
 	}
 
 	public Vector toVector() {
 		Vector v = super.toVector();
-		v.add(airline);
+		v.add(airplane);
 		return v;
 	}
 }

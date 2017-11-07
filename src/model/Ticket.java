@@ -12,6 +12,7 @@ public class Ticket {
 	private final String phone;
 	private final String flightDetail;
 	private final String seatNumber;
+	private final String classType;
 	
 
 	public static final int ID = 0;
@@ -22,9 +23,10 @@ public class Ticket {
 	public static final int PHONE = 5;
 	public static final int FLIGHTDETAIL = 6;
 	public static final int SEATNUMBER = 7;
+	public static final int CLASSTYPE = 8;
 	
 	public Ticket(String ticketId, String ticketNumber, String firstName, String lastName, String email, String phone,
-			String flightDetail, String seatNumber) {
+			String flightDetail, String seatNumber, String classType) {
 		super();
 		this.ticketId = ticketId;
 		this.ticketNumber = ticketNumber;
@@ -34,6 +36,7 @@ public class Ticket {
 		this.phone = phone;
 		this.flightDetail = flightDetail;
 		this.seatNumber = seatNumber;
+		this.classType = classType;
 	}
 	
 	public Ticket(Vector v) {
@@ -46,6 +49,7 @@ public class Ticket {
 		this.flightDetail =  (String) v.get(FLIGHTDETAIL);
 		this.ticketNumber =  (String) v.get(TICKETNUMBER);
 		this.seatNumber =  (String) v.get(SEATNUMBER);
+		this.classType =  (String) v.get(CLASSTYPE);
 	}
 
 	public Vector toVector() {
@@ -58,6 +62,7 @@ public class Ticket {
 		v.add(phone);
 		v.add(flightDetail);
 		v.add(seatNumber);
+		v.add(classType);
 		return v;
 	}
 

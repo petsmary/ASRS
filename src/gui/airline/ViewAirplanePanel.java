@@ -1,4 +1,4 @@
-package gui;
+package gui.airline;
 
 import java.awt.BorderLayout;
 import java.util.Vector;
@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 @SuppressWarnings("serial")
 public class ViewAirplanePanel extends JPanel {
@@ -16,23 +17,28 @@ public class ViewAirplanePanel extends JPanel {
 	  JTable jTable1;
 	  Vector headings;
 
-	  public ViewAirplanePanel(JFrame frame, String title) {
+	  public ViewAirplanePanel(JFrame frame, Object key) {
 	    try {
-	      jbInit();
+	      jbInit(key);
 	    }
 	    catch(Exception ex) {
 	      ex.printStackTrace();
 	    }
 	  }
 
-	  void jbInit(){
+	  void jbInit(Object key){
 	    setLayout(borderLayout1);
 	    add(jScrollPane1, BorderLayout.CENTER);
 
 	    headings = controller.AllAirplanes.getInstance().getCoulumnName();
 
-	    // Note that we need to pad the table to a fixed width for JTable, width is passed to getTable
-	    jTable1 = new JTable(controller.AllAirplanes.getInstance().getTable(), headings);
+	    jTable1 = new JTable();
+	    jTable1.setModel(new DefaultTableModel(controller.AllAirplanes.getInstance().getAirplane(model.Airplane.AIRLINE, key), headings) {
+			@Override
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			}
+		});
 	    jScrollPane1.getViewport().add(jTable1, null);
 
 	  }

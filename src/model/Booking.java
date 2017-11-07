@@ -14,13 +14,13 @@ public class Booking {
 	private final String bookingNumber;
 
 	public static final int ID = 0;
-	public static final int FIRSTNAME = 1;
-	public static final int LASTNAME = 2;
-	public static final int EMAIL = 3;
-	public static final int PHONE = 4;
-	public static final int FLIGHTDETAIL = 5;
-	public static final int STATUS = 6;
-	public static final int BOOKINGNUMBER = 7;
+	public static final int BOOKINGNUMBER = 1;
+	public static final int FIRSTNAME = 2;
+	public static final int LASTNAME = 3;
+	public static final int EMAIL = 4;
+	public static final int PHONE = 5;
+	public static final int FLIGHTDETAIL = 6;
+	public static final int STATUS = 7;
 
 	public void setStatus(String status) {
 		this.status = status;
@@ -54,13 +54,13 @@ public class Booking {
 	public Vector toVector() {
 		Vector v = new Vector();
 		v.add(bookId);
+		v.add(bookingNumber);
 		v.add(firstName);
 		v.add(lastName);
 		v.add(email);
 		v.add(phone);
 		v.add(flightDetail);
-		v.add(status);
-		v.add(bookingNumber);
+		v.add(status);		
 		return v;
 	}
 

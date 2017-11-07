@@ -73,7 +73,8 @@ public class LoginDialog extends JDialog {
 					break;
 
 				case ASRS.AIRLINE:
-					Vector vector = controller.AllAirplanes.getInstance().getAirline(model.Airline.LOGINNAME, getUsername());
+					Vector v = controller.AllAirplanes.getInstance().getAirline(model.Airline.LOGINNAME, getUsername());
+					Vector vector = (Vector) v.get(0);
 					if (vector != null) {
 						if (vector.get(model.Airline.PASSWORD).equals(getPassword())) {
 							correct();

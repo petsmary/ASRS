@@ -59,6 +59,7 @@ public class Flight {
 		v.add(destination);
 		v.add(departure);
 		v.add(arrive);
+		v.add(airplane);
 		v.add(flightDetail);
 		return v;
 	}

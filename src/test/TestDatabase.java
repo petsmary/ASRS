@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import db.JDBCDatabaseTable;
-import gui.customer.booking.AirplanePanel;
+import gui.customer.booking.SeatPanel;
 
 public class TestDatabase {
 
@@ -42,9 +42,9 @@ public class TestDatabase {
 		
 		System.out.println(controller.AllAirplanes.getInstance().getAirline(model.Airline.LOGINNAME, "abc")); 
 		System.out.println(controller.AllFlights.getInstance().getFlightDetail("1").getFlightDetail());
-
+		//System.out.println((Integer)"A");
 		//JFrame frame = new JFrame();
-		//frame.add(new ViewAirplanePanel(frame, "Airline"));
+		//frame.add(new SeatPanel(frame, new JPanel(), Integer.parseInt("18"), Integer.parseInt("6")));
 		//frame.setVisible(true);
 	}
 }

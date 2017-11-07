@@ -12,11 +12,11 @@ public class BookingFrame extends JFrame {
 
 	private JFrame frame;
 	
-	public BookingFrame(JFrame frame, Vector flight) {
+	public BookingFrame(JFrame frame, Vector flight, String type) {
 		this.frame = frame;
 		frame.setVisible(false);
 		toFront();
-		JPanel panel = new AirplanePanel(this, flight);
+		JPanel panel = new AirplanePanel(this, flight, type);
 		add(panel);
 		setSize(1000, 800);
 		setLocationRelativeTo(this);
@@ -29,7 +29,7 @@ public class BookingFrame extends JFrame {
 		});
 	}
 	
-	private void exit() {
+	public void exit() {
 		setVisible(false);
 		dispose();
 		frame.setVisible(true);
