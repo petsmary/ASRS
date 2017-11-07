@@ -3,8 +3,8 @@ package test;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import db.JDBCDatabaseTable;
-import gui.customer.booking.SeatPanel;
+import asrs.db.JDBCDatabaseTable;
+import asrs.gui.customer.booking.SeatPanel;
 
 public class TestDatabase {
 
@@ -40,8 +40,8 @@ public class TestDatabase {
 		System.out.println(new JDBCDatabaseTable("TravelAgent").getColumnNames());
 
 		
-		System.out.println(controller.AllAirplanes.getInstance().getAirline(model.Airline.LOGINNAME, "abc")); 
-		System.out.println(controller.AllFlights.getInstance().getFlightDetail("1").getFlightDetail());
+		System.out.println(asrs.controller.AllAirplanes.getInstance().getAirline(asrs.model.Airline.LOGINNAME, "abc")); 
+		System.out.println(asrs.controller.AllFlights.getInstance().getFlightDetail("1").getFlightDetail());
 		//System.out.println((Integer)"A");
 		//JFrame frame = new JFrame();
 		//frame.add(new SeatPanel(frame, new JPanel(), Integer.parseInt("18"), Integer.parseInt("6")));
